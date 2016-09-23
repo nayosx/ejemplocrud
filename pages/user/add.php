@@ -5,7 +5,7 @@ if(isset($_SESSION['valid']) && $_SESSION['valid'] == TRUE){ ?>
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Lista de usuarios</title>
+        <title>Agregar usuario</title>
         <link rel="stylesheet" href="../../assets/plugins/boostrap/css/bootstrap.min.css" type="text/css" />
     </head>
     <body>

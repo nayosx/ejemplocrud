@@ -8,6 +8,7 @@ if (isset($_SESSION['valid']) && $_SESSION['valid'] == TRUE) {
         ':user' => $_POST['username'],
         ':pass' => $_POST['password']
     );
+    
     $usuario = $db->execute($query, $params);
     if($usuario){
         header('Location: ../pages/user/list.php');
@@ -19,3 +20,4 @@ if (isset($_SESSION['valid']) && $_SESSION['valid'] == TRUE) {
     header('Location: ../index.php');
     die();
 }
+
