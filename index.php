@@ -5,15 +5,8 @@ if(isset($_SESSION['valid']) && $_SESSION['valid'] == TRUE){
     die();
 } else{
 ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Login</title>
-        <link rel="stylesheet" href="assets/plugins/boostrap/css/bootstrap.min.css" type="text/css" />
-    </head>
-    <body>
-        <div class="container">
+<?php include_once('./template/header.php'); ?>
+        <div class="container min-container-height first-container">
             <div class="row">
                 <div class="col-md-4 col-md-offset-4">
                     <form action="app/login.php" method="POST">
@@ -32,8 +25,7 @@ if(isset($_SESSION['valid']) && $_SESSION['valid'] == TRUE){
                 </div>
             </div>
         </div>
-    </body>
-</html>
+<?php include_once('./template/footer.php'); ?>
 <?php
 } 
 ?>

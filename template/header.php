@@ -37,10 +37,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<a href="#" class="navicon"></a>
 				<div class="toggle">
 					<ul class="toggle-menu">
-						<li><a  href="index.html">Home</a></li>
+						<li><a class="active"  href="index.html">Home</a></li>
 						<li><a  href="menu.html">Menu</a></li>
 						<li><a   href="blog.html">Blog</a></li>
-						<li><a class="active" href="typo.html">Codes</a></li>
+						<li><a href="typo.html">Codes</a></li>
 						<li><a  href="events.html">Events</a></li>
 						<li><a  href="contact.html">Contact</a></li>
 					</ul>

@@ -117,6 +117,16 @@ body{
   transform: scale(1.15);
   font-weight: 700;
 }
+
+.min-container-height{
+  min-height: 630px;
+}
+
+.first-container{
+  margin-top: 60px;
+}
+
+
 @media(max-width:991px){
 .toggle {
     width: 50%;
@@ -134,5 +144,12 @@ body{
 }
 .toggle-menu li a {
     font-size: 15px;
-} 
+}
+
+.first-container{
+  margin-top: 30px;
+}
+.min-container-height{
+  min-height: 300px;
+}
 }
