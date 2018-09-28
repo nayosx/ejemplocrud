@@ -6,7 +6,7 @@ if (isset($_SESSION['valid']) && $_SESSION['valid'] == TRUE) {
     $query = "INSERT INTO usuario (username, password) VALUES (:user, :pass) ;";
     $params = array(
         ':user' => $_POST['username'],
-        ':pass' => $_POST['password']
+        ':pass' => md5($_POST['password'])
     );
     
     $usuario = $db->execute($query, $params);

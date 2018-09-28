@@ -16,7 +16,7 @@ if(isset($_SESSION['valid']) && $_SESSION['valid'] == TRUE){
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-md-offset-4">
-                    <form action="controller/login.php" method="POST">
+                    <form action="app/login.php" method="POST">
                         <div class="form-group">
                             <label class="control-label">Usuario</label>
                             <input type="text" class="form-control" name="username"/>
@@ -35,5 +35,5 @@ if(isset($_SESSION['valid']) && $_SESSION['valid'] == TRUE){
     </body>
 </html>
 <?php
-} ?>
-
+} 
+?>

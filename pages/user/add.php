@@ -14,7 +14,7 @@ if(isset($_SESSION['valid']) && $_SESSION['valid'] == TRUE){ ?>
                 <div class="col-md-4 col-md-offset-4">
                     <h1>Agregar usuario</h1>
                     <div class="well">
-                        <form action="../../controller/userAdd.php" method="POST">
+                        <form action="../../app/userAdd.php" method="POST">
                             <div class="form-group">
                                 <label class="control-label">Nombre de usuario</label>
                                 <input type="text" class="form-control" name="username"/>

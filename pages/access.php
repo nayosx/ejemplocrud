@@ -20,7 +20,7 @@ if(isset($_SESSION['valid']) && $_SESSION['valid'] == TRUE){ ?>
                         <a href="user/add.php" class="btn btn-block btn-success">Agregar usuario</a>
                     </div>
                     <div class="col-xs-4">
-                        <a href="../controller/logout.php" class="btn btn-block btn-danger">Salir de la sesión</a>
+                        <a href="../app/logout.php" class="btn btn-block btn-danger">Salir de la sesión</a>
                     </div>
                 </div>
             </div>

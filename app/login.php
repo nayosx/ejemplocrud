@@ -14,8 +14,9 @@ if($username != "" && $password != ""){
     $usuario = $db->row($query, $params);
     if(is_object($usuario) && !empty($usuario)){
         
-        if($password == $usuario->password){
+        if(md5($password) === $usuario->password){
             $_SESSION['valid'] = TRUE;
+            $_SESSION['id'] = $usuario->id;
             header('Location: ../pages/access.php');
             die();
         }else {

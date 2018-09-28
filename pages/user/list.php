@@ -37,7 +37,7 @@ if(isset($_SESSION['valid']) && $_SESSION['valid'] == TRUE){
                                 <td><?php echo $usuario->password;?></td>
                                 <td>
                                     <a href="edit.php?id=<?php echo $usuario->id;?>" class="btn btn-sm btn-info">Editar</a>
-                                    <a href="../../controller/userDelete.php?id=<?php echo $usuario->id;?>" class="btn btn-sm btn-danger">Eliminar</a>
+                                    <a href="../../app/userDelete.php?id=<?php echo $usuario->id;?>" class="btn btn-sm btn-danger">Eliminar</a>
                                 </td>
                             </tr>
                             <?php
