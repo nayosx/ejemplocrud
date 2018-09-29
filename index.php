@@ -6,7 +6,7 @@ if(isset($_SESSION['valid']) && $_SESSION['valid'] == TRUE){
 } else{
 ?>
 <?php include_once('./template/header.php'); ?>
-        <div class="container min-container-height first-container">
+        <div class="container first-container">
             <div class="row">
                 <div class="col-md-4 col-md-offset-4">
                     <form action="app/login.php" method="POST">

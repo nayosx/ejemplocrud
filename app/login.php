@@ -17,19 +17,19 @@ if($username != "" && $password != ""){
         if(md5($password) === $usuario->password){
             $_SESSION['valid'] = TRUE;
             $_SESSION['id'] = $usuario->id;
-            header('Location: ../pages/access.php');
+            header('Location: ../access.php');
             die();
         }else {
-            header('Location: ../pages/denied.php');
+            header('Location: ../denied.php');
             die();
         }
         
     }else {
-        header('Location: ../pages/denied.php');
+        header('Location: ../denied.php');
         die();
     }
 } else {
-    header('Location: ../index.php');
+    header('Location: index.php');
     die();
 }
 
