@@ -10,10 +10,10 @@ if (isset($_SESSION['valid']) && $_SESSION['valid'] == TRUE) {
         $db = TestDB::getInstance();
         switch($_GET['action']) {
             case EDITAR:
-                updateUser($db, $id);
+                _updateUser($db, $id);
             break;
-            case PASSWORD;
-                updatePassword($db, $id);
+            case PASSWORD:
+                _updatePassword($db, $id);
             break;
         }
     } else {
@@ -25,8 +25,7 @@ if (isset($_SESSION['valid']) && $_SESSION['valid'] == TRUE) {
     die();
 }
 
-
-function updateUser($db, $id) {
+function _updateUser($db, $id) {
     $query = "UPDATE usuario SET username = :user WHERE id = :id ;";
     $params = array(
         ':id' => $id,
@@ -43,26 +42,43 @@ function updateUser($db, $id) {
     }
 }
 
-function updatePassword($db, $id) {
+function _updatePassword($db, $id) {
     $msg = '';
-    if($_POST['actual'] !== $_POST['new']) {
+    $actual = $_POST['actual'];
+    $new = $_POST['new'];
 
-        echo 'no deberia hacer esto';
-        /*$query = "UPDATE usuario SET password = :pass WHERE id = :id ;";
-        $params = array(
-            ':id' => $id,
-            ':pass' => md5($_POST['new'])
-        );
-        $isUpdate = $db->execute($query, $params);
-        if($isUpdate){
-            header('Location: ../list.php');
-            die();
-        } else{
-            $msg = 'No se a podido actualizar el la contraseña';
-        }*/
+    $query = "SELECT password FROM usuario WHERE id = :id ;";
+    $params = array(
+        ':id' => $id
+    );
+    
+    $usuario = $db->row($query, $params);
+    
+    if(is_object($usuario) && !empty($usuario)) {
+        if(md5($actual) === $usuario->password) {
+            if(md5($new) !== $usuario->password) {
+                $query = "UPDATE usuario SET password = :pass WHERE id = :id ;";
+                $params = array(
+                    ':id' => $id,
+                    ':pass' => md5($new)
+                );
+                $isUpdate = $db->execute($query, $params);
+                if($isUpdate){
+                    header('Location: ../list.php');
+                    die();
+                } else{
+                    $msg = 'No se a podido actualizar el la contraseña';
+                }
+            } else {
+                $msg = 'La nueva contraseña no tiene que ser igual a la anterior';
+            }
+        } else {
+            $msg = 'La contraseña actual no es valida';
+        }
     } else {
-        $msg = 'La contraseña tiene que ser distinta a la actual';
+        header('Location: ../list.php');
+        die();
     }
     $msg = urlencode($msg);
-    header('Location: ../edit.php?errorPassword=' . $msg);
+    header('Location: ../edit.php?id='.$id.'&errorPassword=' . $msg);
 }
