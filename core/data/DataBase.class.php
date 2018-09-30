@@ -1,10 +1,4 @@
 <?php
-
-/**
- * Description of DataBase
- *
- * @author Adonai Gonzalez <nayos144@gmail.com>
- */
 abstract class DataBase {
     const HOST = 'host';
     const DATABASE = 'database';

@@ -18,7 +18,7 @@ if($username != "" && $password != ""){
             $_SESSION['valid'] = TRUE;
             $_SESSION['id'] = $usuario->id;
             $_SESSION['username'] = $usuario->username;
-            header('Location: ../access.php');
+            header('Location: ../eat.php');
             die();
         }else {
             header('Location: ../denied.php');
