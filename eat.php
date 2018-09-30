@@ -2,9 +2,9 @@
 session_start();
 require_once('core/data/MyDatabase.php');
 if(isset($_SESSION['valid']) && $_SESSION['valid'] == TRUE){ 
-	$db = new MyDatabase();
+	$db = MyDatabase::getInstance();
     $query = "SELECT *  FROM platos;";
-    $listaPlatos = $db->result($query);
+	$listaPlatos = $db->result($query);
 ?>
 <?php include_once('./template/header.php'); ?>
 <!--news-->

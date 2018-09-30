@@ -1,7 +1,7 @@
 <?php
 error_reporting(0);
 session_start();
-$actualUser = (isset($_SESSION['username'])) ? 'Bienvenido ' . $_SESSION['username'] . '<a href="logout.php"> <i class="glyphicon glyphicon-log-out"></i> salir</a>' : '';
+$actualUser = (isset($_SESSION['username'])) ? 'Bienvenido ' . $_SESSION['username'] . '<a href="app/logout.php"> <i class="glyphicon glyphicon-log-out"></i> salir</a>' : '';
 ?>
 <!DOCTYPE html>
 <html>

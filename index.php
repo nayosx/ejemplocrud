@@ -13,7 +13,7 @@ if(isset($_SESSION['valid']) && $_SESSION['valid'] == TRUE){
                     <form action="app/login.php" method="POST">
                         <div class="form-group">
                             <label class="control-label">Usuario</label>
-                            <input type="text" class="form-control" name="username" required/>
+                            <input type="text" class="form-control" name="username" value="<?php if(isset($_GET['user'])) { echo $_GET['user']; }?>" required/>
                         </div>
                         <div class="form-group">
                             <label class="control-label">Contraseña</label>
@@ -23,6 +23,12 @@ if(isset($_SESSION['valid']) && $_SESSION['valid'] == TRUE){
                             <button type="submit" class="btn btn-primary">Ingresar</button>
                         </div>
                     </form>
+
+                    <?php if(isset($_GET['error'])) {?>
+                    <div class="alert alert-danger">
+                        <?php echo $_GET['error'] ?>
+                    </div>
+                    <?php }?>
                 </div>
             </div>
         </div>

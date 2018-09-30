@@ -1,39 +1,40 @@
 <?php
 session_start();
-require '../core/data/MyDatabase.php';
+require_once '../core/data/MyDatabase.php';
 
 $username = $_POST['username'];
 $password = $_POST['password'];
+$msgError = '';
+$redirectTo = 'Location: ';
+$actualUser = '&user=';
 
 if($username != "" && $password != ""){
-    $db = new MyDatabase();
+    $db = MyDatabase::getInstance();
     $query = "SELECT * FROM usuario WHERE username = :user";
     $params = array(
         ':user' => $username
     );
     $usuario = $db->row($query, $params);
+    $actualUser .= urlencode($username);
     if(is_object($usuario) && !empty($usuario)){
-        
         if(md5($password) === $usuario->password){
             $_SESSION['valid'] = TRUE;
             $_SESSION['id'] = $usuario->id;
             $_SESSION['username'] = $usuario->username;
-            header('Location: ../eat.php');
-            die();
+            $redirectTo .= '../eat.php';
         }else {
-            header('Location: ../denied.php');
-            die();
+            $msgError = urlencode('Contraseña incorrecta');
+            $redirectTo .= '../index.php?error='.$msgError . $actualUser;
         }
-        
     }else {
-        header('Location: ../denied.php');
-        die();
+        $msgError = urlencode('Usuario no valido');
+        $redirectTo .= '../index.php?error='.$msgError . $actualUser;
     }
 } else {
-    header('Location: ../index.php');
-    die();
+    $msgError = urlencode('Se necesitan credenciales para ingresar');
+    $redirectTo .= '../index.php?error='.$msgError;
 }
-
+header($redirectTo);
 
 
 
