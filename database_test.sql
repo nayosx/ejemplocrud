@@ -67,7 +67,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `username`, `password`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3'); -- admin pero en md5, lo se pero es mejor que nada 
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3'); -- el password es admin , md5.. lo se pero es mejor que nada 
 
 --
 -- Índices para tablas volcadas
