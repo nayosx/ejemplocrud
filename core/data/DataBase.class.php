@@ -1,10 +1,4 @@
 <?php
-
-/**
- * Description of DataBase
- *
- * @author Adonai Gonzalez <nayos144@gmail.com>
- */
 abstract class DataBase {
     const HOST = 'host';
     const DATABASE = 'database';
@@ -23,14 +17,6 @@ abstract class DataBase {
     protected $connection; //database handler
     protected $stmt;
     protected $lastquery = NULL;
-    private static $_instance; // singlenton instance
-
-    public static function getInstance() {
-        if (!self::$_instance) {
-            self::$_instance = new self();
-        }
-        return self::$_instance;
-    }
 
     public function __construct($config = array()) {
         if (!empty($config)) {
@@ -57,7 +43,11 @@ abstract class DataBase {
         }
     }
 
-    function __destruct() {
+    public function __destruct() {
+        $this->conexion = null;
+    }
+
+    public function close() {
         $this->conexion = null;
     }
 
@@ -283,5 +273,4 @@ abstract class DataBase {
             $this->_error = $ex->getMessage();
         }
     }
-
 }
