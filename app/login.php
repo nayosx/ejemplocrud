@@ -4,7 +4,7 @@ require_once '../core/data/MyDatabase.php';
 
 $username = $_POST['username'];
 $password = $_POST['password'];
-$msgError = '';
+$msgError = '?error=';
 $redirectTo = 'Location: ';
 $actualUser = '&user=';
 
@@ -23,16 +23,16 @@ if($username != "" && $password != ""){
             $_SESSION['username'] = $usuario->username;
             $redirectTo .= '../eat.php';
         }else {
-            $msgError = urlencode('Contraseña incorrecta');
-            $redirectTo .= '../index.php?error='.$msgError . $actualUser;
+            $msgError .= urlencode('Contraseña incorrecta');
+            $redirectTo .= '../index.php'.$msgError . $actualUser;
         }
     }else {
-        $msgError = urlencode('Usuario no valido');
-        $redirectTo .= '../index.php?error='.$msgError . $actualUser;
+        $msgError .= urlencode('Usuario no valido');
+        $redirectTo .= '../index.php'.$msgError . $actualUser;
     }
 } else {
     $msgError = urlencode('Se necesitan credenciales para ingresar');
-    $redirectTo .= '../index.php?error='.$msgError;
+    $redirectTo .= '../index.php'.$msgError;
 }
 header($redirectTo);
 
