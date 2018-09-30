@@ -13,11 +13,11 @@ if(isset($_SESSION['valid']) && $_SESSION['valid'] == TRUE){
                     <form action="app/login.php" method="POST">
                         <div class="form-group">
                             <label class="control-label">Usuario</label>
-                            <input type="text" class="form-control" name="username"/>
+                            <input type="text" class="form-control" name="username" required/>
                         </div>
                         <div class="form-group">
                             <label class="control-label">Contraseña</label>
-                            <input type="password" class="form-control" name="password"/>
+                            <input type="password" class="form-control" name="password" required/>
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary">Ingresar</button>

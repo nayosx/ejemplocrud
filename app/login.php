@@ -30,7 +30,7 @@ if($username != "" && $password != ""){
         die();
     }
 } else {
-    header('Location: index.php');
+    header('Location: ../index.php');
     die();
 }
 
