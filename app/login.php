@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../core/data/MyDatabase.php';
+require_once '../core/data/TestDB.class.php';
 
 $username = $_POST['username'];
 $password = $_POST['password'];
@@ -9,7 +9,7 @@ $redirectTo = 'Location: ';
 $actualUser = '&user=';
 
 if($username != "" && $password != ""){
-    $db = MyDatabase::getInstance();
+    $db = TestDB::getInstance();
     $query = "SELECT * FROM usuario WHERE username = :user";
     $params = array(
         ':user' => $username
@@ -31,7 +31,7 @@ if($username != "" && $password != ""){
         $redirectTo .= '../index.php'.$msgError . $actualUser;
     }
 } else {
-    $msgError = urlencode('Se necesitan credenciales para ingresar');
+    $msgError .= urlencode('Se necesitan credenciales para ingresar');
     $redirectTo .= '../index.php'.$msgError;
 }
 header($redirectTo);

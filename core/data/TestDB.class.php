@@ -1,6 +1,6 @@
 <?php
 require 'DataBase.class.php';
-class MyDatabase extends DataBase{
+class TestDB extends DataBase{
     private static $_instance;
 
     public function __construct() {

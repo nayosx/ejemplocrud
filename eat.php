@@ -1,8 +1,8 @@
 <?php
 session_start();
-require_once('core/data/MyDatabase.php');
+require_once('./core/data/TestDB.class.php');
 if(isset($_SESSION['valid']) && $_SESSION['valid'] == TRUE){ 
-	$db = MyDatabase::getInstance();
+	$db = TestDB::getInstance();
     $query = "SELECT *  FROM platos;";
 	$listaPlatos = $db->result($query);
 ?>
@@ -49,7 +49,6 @@ if(isset($_SESSION['valid']) && $_SESSION['valid'] == TRUE){
 <?php
 } else{
     header('Location: index.php');
-    die();
 }
 ?>
 

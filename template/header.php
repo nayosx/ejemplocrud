@@ -42,12 +42,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<a href="#" class="navicon"></a>
 				<div class="toggle">
 					<ul class="toggle-menu">
-						<li><a class="active"  href="index.html">Home</a></li>
-						<li><a  href="menu.html">Menu</a></li>
-						<li><a   href="blog.html">Blog</a></li>
-						<li><a href="typo.html">Codes</a></li>
-						<li><a  href="events.html">Events</a></li>
-						<li><a  href="contact.html">Contact</a></li>
+						<li><a class="active" href="index.php">Home</a></li>
+						<li><a  href="eat.php">Menu</a></li>
+						<li><a href="list.php">CRUD Usuario</a></li>
+						<li><a href="add.php">Agregar Usuario</a></li>
 					</ul>
 				</div>
 			<script>
