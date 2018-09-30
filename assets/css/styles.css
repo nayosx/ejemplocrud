@@ -148,3 +148,28 @@ body{
   min-height: 300px;
 }
 }
+
+.session-user {
+  color: #fff; 
+  float: right; 
+  margin-top: 1em; 
+  margin-right: 20px;
+  font-size: 1.3em;
+}
+
+.session-user a {
+  margin-left: 7px;
+  color: #fff;
+}
+
+.session-user a:hover {
+  color: #fff;
+}
+
+.mb-3 {
+  margin-bottom: 30px;
+}
+
+.info-plato  h3, .info-plato h4 {
+  margin-bottom: 7px;
+}

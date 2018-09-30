@@ -1,3 +1,8 @@
+<?php
+error_reporting(0);
+session_start();
+$actualUser = (isset($_SESSION['username'])) ? 'Bienvenido ' . $_SESSION['username'] . '<a href="logout.php"> <i class="glyphicon glyphicon-log-out"></i> salir</a>' : '';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,6 +58,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			});
 			</script>
 		</div>
+		<div class="session-user"><?php echo $actualUser;?></div>
 	<div class="clearfix"></div>
 	</div>
 	<!-- start search-->	
