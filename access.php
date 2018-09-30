@@ -25,10 +25,10 @@ if(isset($_SESSION['valid']) && $_SESSION['valid'] == TRUE){
 				<div class="row">
 				<?php
 				foreach($listaPlatos as $plato) { ?>
-					<div class="col-md-5 mt-3 mb-3 animated wow fadeInLeft">
+					<div class="col-md-5 mt-3 mb-3 animated wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="500ms">
 						<img src="img/<?php echo (isset($plato->imagen)) ? $plato->imagen : 'default.gif' ; ?>" class="img img-responsive"/>
 					</div>
-					<div class="col-md-7 animated wow fadeInRight info-plato">
+					<div class="col-md-7 animated wow fadeInRight info-plato" data-wow-duration="1000ms" data-wow-delay="500ms">
 						<h3><strong>Nombre:</strong> <?php echo $plato->nombre; ?></h3>
 						<h4><strong>Descripci&oacute;n:</strong> <?php echo $plato->descripcion; ?></h4>
 						<h4><strong>Acompa&ntilde;amiento:</strong> <?php echo $plato->acompanamiento; ?></h4>
