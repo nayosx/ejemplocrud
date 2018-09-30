@@ -123,6 +123,11 @@ body{
   min-height: 630px;
 }
 
+.eat-container {
+  margin-top: 30px;
+  min-height: 630px;
+}
+
 
 @media(max-width:991px){
 .toggle {

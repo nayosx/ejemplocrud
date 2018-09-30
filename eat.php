@@ -9,7 +9,7 @@ if(isset($_SESSION['valid']) && $_SESSION['valid'] == TRUE){
 <?php include_once('./template/header.php'); ?>
 <!--news-->
 	<div class="content-top-top">
-		<div class="container first-container">
+		<div class="container">
 			<div class="content-top">
 				<div class="col-md-4 content-left animated wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="500ms">
 					<h3>News</h3>
