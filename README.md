@@ -1,7 +1,7 @@
 # ejemplocrud
 Este es un pequeño ejemplo de CRUD hecho en PHP sin framework, un poco de codigo espagueti para no perder la constumbre y consta de lo siguiente:
 
-* Una base de datos simple llamada database_test.sql
+* Una base de datos simple database_test.sql
 * Un tema basado en bootstrap llamado [Cookery](https://w3layouts.com/cookery-food-category-flat-bootstrap-responsive-web-template/)
 * Creación de contraseña por medio de MD5 (es mejor que nada, al fin y al cabo es un ejemplo)
 * Conexión a base de datos por medio de PDO
